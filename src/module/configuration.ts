@@ -4,31 +4,22 @@
 // Once you add an import or export statement, you can remove the `export {}`.
 export {};
 
-  import type { SmtItem } from "./documents/item/item";
-  import type { SkillData } from "./data-models/item/types/skill";
+import type { SmtItem } from "./documents/item/item";
+import type { SkillData } from "./data-models/item/types/skill";
+import type { InventoryItemData } from "./data-models/item/types/inventoryItem";
 
-  // If you are writing a system then this file will be of use of you.
-  // Otherwise you can delete it.
-  declare module "fvtt-types/configuration" {
-    // foundry-vtt-types needs to know what documents you register with Foundry at runtime.
-    // You can configure every document class here.
-    //
-    // Tip 1: Make sure you import the document class and make sure the key is spelled right.
-    // Tip 2: If you want to make sure it's working, try writing `type TestConfiguration = ConfiguredDocumentClassForName<"Actor">;`
-    //        replacing `"Actor"` with the document type you're working with.
-    //        If hovering `TestConfiguration` says `typeof MyActor`, congratulations! It's working.
-    // Tip 2: If `MyActor` has generic parameters without defaults, you need to provide them here.
-    //        For example `typeof Actor<"npc" | "character">`. Make sure that the generic parameters are as wide as possible.
-    interface DocumentClassConfig {
-      Item: typeof SmtItem<ItemType>;
-    }
-
-    // foundry-vtt-types needs to know what data models you register with Foundry at runtime.
-    interface DataModelConfig {
-      Item: {
-        skill: typeof SkillData;
-      };
-    }
+// This is how we do it now, right?
+declare module "fvtt-types/configuration" {
+  interface DocumentClassConfig {
+    Item: typeof SmtItem<ItemType>;
   }
+
+  interface DataModelConfig {
+    Item: {
+      inventoryItem: typeof InventoryItemData;
+      skill: typeof SkillData;
+    };
+  }
+}
 
 // type TestConfiguration = Document.ImplementationClassFor<"Actor">;

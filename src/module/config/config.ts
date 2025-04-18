@@ -13,6 +13,7 @@ const characterClasses = {
 
 const itemTypes = {
   skill: "TYPES.Item.skill",
+  inventoryItem: "TYPES.Item.inventoryItem",
 };
 
 export const SMT = {
