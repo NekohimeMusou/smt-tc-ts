@@ -10,5 +10,29 @@
   "stylelint.enable": true,
   "stylelint.validate": ["css", "scss"],
 
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.words": [
+    "ATLUS",
+    "esmodules",
+    "fvtt",
+    "ITEMMODELS",
+    "magatama",
+    "Megami",
+    "Tensei"
+  ],
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[handlebars]": {
+    "editor.tabSize": 2
+  },
+  "i18n-ally.localesPaths": ["src/lang"],
+  "i18n-ally.keystyle": "nested",
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

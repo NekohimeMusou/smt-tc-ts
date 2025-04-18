@@ -9,12 +9,13 @@ import { findFoundryHost, findManifestJSON } from "./utils.ts";
 
 export type PackageType = "module" | "system" | "world";
 
-const packageType: PackageType = "module";
+const packageType: PackageType = "system";
 
 // The package name should be the same as the name in the `module.json`/`system.json` file.
-const packageID: string = "abc";
+const packageID: string = "smt-tc-ts";
 
 // @ts-expect-error the types are set to invalid values to ensure the user sets them.
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 if (packageType == "REPLACE ME" || packageID == "REPLACE ME") {
   throw new Error(
     `Must set the "packageType" and the "packageID" variables in vite.config.ts`,

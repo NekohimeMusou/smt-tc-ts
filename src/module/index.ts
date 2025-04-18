@@ -5,16 +5,23 @@
 // The pivotal part about it here is that it's effectively equivalent to:
 // `var DataModel = foundry.abstract.DataModel`.
 // But it also lets you write things like `DataModel.Any` that refers to the `DataModel` namespace.
-import DataModel = foundry.abstract.DataModel;
+
+import { ITEMMODELS } from "./data-models/item/item-data-models";
+import { SmtItem } from "./documents/item/item";
 
 Hooks.on("ready", () => {
   // This is an example of why using the `import =` syntax is helpful.
   // Try changing the `import` above to `const` and see what happens.
-  const exampleActor: DataModel.Any = new Actor({ name: "Example Actor" });
+  console.log("SMT: TC | Initializing SMT: Tokyo Conception game system");
 
-  if (!(exampleActor instanceof DataModel)) {
-    throw new Error("Actor must be an instance of DataModel!");
-  }
-
-  console.log(exampleActor);
+  registerDataModels();
+  registerDocumentClasses();
 });
+
+function registerDataModels() {
+  CONFIG.Item.dataModels = ITEMMODELS;
+}
+
+function registerDocumentClasses() {
+  CONFIG.Item.documentClass = SmtItem;
+}

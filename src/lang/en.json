@@ -1,0 +1,16 @@
+{
+  "TYPES": {
+    "Item": {
+      "skill": "Skill",
+      "weapon": "Weapon",
+      "inventoryItem": "Item",
+      "armor": "Armor",
+      "magatama": "Magatama"
+    },
+    "Actor": {
+      "fiend": "Fiend",
+      "demon": "Demon",
+      "human": "Human"
+    }
+  }
+}

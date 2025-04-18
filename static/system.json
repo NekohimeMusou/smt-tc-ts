@@ -1,0 +1,53 @@
+{
+  "id": "smt-tc-ts",
+  "title": "SMT RPG: Tokyo Conception (Unofficial)",
+  "description": "Unofficial Foundry VTT system for Shin Megami Tensei: Tokyo Conception. Not affiliated with LionWing Publishing or ATLUS.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": 12,
+    "verified": 12
+  },
+
+  "url": "https://github.com/NekohimeMusou/fvtt-types-test",
+
+  "authors": [
+    {
+      "name": "Nekohime Musou",
+      "url": "https://github.com/NekohimeMusou",
+      "discord": "nekohime.musou"
+    }
+  ],
+
+  "esmodules": ["index.js"],
+  "styles": ["styles.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+
+  "documentTypes": {
+    "Actor": {
+      "fiend": { "htmlFields": ["notes"] },
+      "demon": { "htmlFields": ["notes"] },
+      "human": { "htmlFields": ["notes"] }
+    },
+    "Item": {
+      "inventoryItem": { "htmlFields": ["description"] },
+      "weapon": { "htmlFields": ["description"] },
+      "armor": { "htmlFields": ["description"] },
+      "magatama": { "htmlFields": ["description"] },
+      "skill": { "htmlFields": ["description"] }
+    }
+  },
+
+  "initiative": "1d10x + @ag",
+  "grid": {
+    "distance": 2,
+    "units": "m"
+  },
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": "mp"
+}
