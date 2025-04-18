@@ -9,15 +9,9 @@ declare global {
 
 const characterClasses = {
   fiend: "TYPES.Actor.fiend",
-  demon: "TYPES.Actor.demon",
-  human: "TYPES.Actor.human",
 };
 
 const itemTypes = {
-  inventoryItem: "TYPES.Item.inventoryItem",
-  weapon: "TYPES.Item.weapon",
-  armor: "TYPES.Item.armor",
-  magatama: "TYPES.Item.magatama",
   skill: "TYPES.Item.skill",
 };
 
