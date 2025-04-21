@@ -6,9 +6,6 @@ export {};
 
   import type { SmtItem } from "./documents/item/item";
 import type { InventoryItemData } from "./data-models/item/types/inventory-item";
-import type { WeaponData } from "./data-models/item/types/weapon";
-import type { ArmorData } from "./data-models/item/types/armor";
-import type { MagatamaData } from "./data-models/item/types/magatama";
 import type { SkillData } from "./data-models/item/types/skill";
 
 // If you are writing a system then this file will be of use of you.
@@ -31,11 +28,8 @@ declare module "fvtt-types/configuration" {
   interface DataModelConfig {
     Item: {
       inventoryItem: typeof InventoryItemData;
-      weapon: typeof WeaponData;
-      armor: typeof ArmorData;
-      magatama: typeof MagatamaData;
       skill: typeof SkillData;
-    }
+    };
   }
 }
 

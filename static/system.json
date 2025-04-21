@@ -29,17 +29,9 @@
   ],
 
   "documentTypes": {
-    "Actor": {
-      "fiend": { "htmlFields": ["notes"] },
-      "demon": { "htmlFields": ["notes"] },
-      "human": { "htmlFields": ["notes"] }
-    },
     "Item": {
-      "inventoryItem": { "htmlFields": ["description"] },
-      "weapon": { "htmlFields": ["description"] },
-      "armor": { "htmlFields": ["description"] },
-      "magatama": { "htmlFields": ["description"] },
-      "skill": { "htmlFields": ["description"] }
+      "skill": { "htmlFields": ["description"] },
+      "inventoryItem": { "htmlFields": ["description"] }
     }
   },
 

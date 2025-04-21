@@ -6,13 +6,25 @@
 // `var DataModel = foundry.abstract.DataModel`.
 // But it also lets you write things like `DataModel.Any` that refers to the `DataModel` namespace.
 
+import { SMT } from "./config/config";
 import { ITEMMODELS } from "./data-models/item/item-data-models";
 import { SmtItem } from "./documents/item/item";
 
+declare global {
+  interface Game {
+    smt: {
+      SmtItem: typeof SmtItem;
+    };
+  }
+
+  interface CONFIG {
+    SMT: typeof SMT;
+  }
+}
 Hooks.on("ready", () => {
-  // This is an example of why using the `import =` syntax is helpful.
-  // Try changing the `import` above to `const` and see what happens.
   console.log("SMT: TC | Initializing SMT: Tokyo Conception game system");
+
+  CONFIG.SMT = SMT;
 
   registerDataModels();
   registerDocumentClasses();
