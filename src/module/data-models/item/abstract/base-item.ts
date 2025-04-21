@@ -4,9 +4,10 @@ const schema = {
   description: new fields.HTMLField(),
 };
 
-export abstract class BaseItemData<
-  T extends Item.Implementation,
-> extends foundry.abstract.TypeDataModel<typeof schema, T> {
+export abstract class BaseItemData extends foundry.abstract.TypeDataModel<
+  typeof schema,
+  Item.Implementation
+> {
   static override defineSchema() {
     return schema;
   }
