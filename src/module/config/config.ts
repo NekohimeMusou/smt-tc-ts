@@ -7,7 +7,6 @@ declare global {
  */
 
 const itemTypes = {
-  inventoryItem: "TYPES.Item.inventoryItem",
   skill: "TYPES.Item.skill",
 };
 
