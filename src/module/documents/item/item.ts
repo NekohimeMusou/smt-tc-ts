@@ -1,1 +1,1 @@
-export class SmtItem<T extends ItemType> extends Item<T> {}
+export class SmtItem<T extends Item.SubType> extends Item<T> {}

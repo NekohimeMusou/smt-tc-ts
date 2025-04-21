@@ -6,7 +6,8 @@ const schema = {
 
 export abstract class BaseItemData extends foundry.abstract.TypeDataModel<
   typeof schema,
-  Item.Implementation
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  any
 > {
   static override defineSchema() {
     return schema;
