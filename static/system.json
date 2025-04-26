@@ -30,7 +30,8 @@
 
   "documentTypes": {
     "Item": {
-      "skill": { "htmlFields": ["description"] }
+      "skill": { "htmlFields": ["description"] },
+      "inventoryItem": { "htmlFields": ["description"] }
     }
   },
 

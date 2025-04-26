@@ -2,13 +2,13 @@ export {};
 
 import type { SmtItem } from "./documents/item/item";
 import type { SkillData } from "./data-models/item/types/skill";
+import type { InventoryItemData } from "./data-models/item/types/inventory-item";
 
 /**
  * CONFIG CONSTANTS
  *
  * These are normally defined in ./config/config.ts; they're moved here to slim down the example
  * I tried simplifying it all the way to `type ItemType = "skill";` and it didn't seem to make a difference,
- * so I stuck with (a pointless version of) the method I've been using all along in case it matters.
  */
 
 declare global {
@@ -17,6 +17,7 @@ declare global {
 
 const itemTypes = {
   skill: "TYPES.Item.skill",
+  inventoryItem: "TYPES.Item.inventoryItem",
 };
 
 export const SMT = {
@@ -29,14 +30,15 @@ export const SMT = {
 
 declare module "fvtt-types/configuration" {
   interface DocumentClassConfig {
-    Item: typeof SmtItem<ItemType>;
+    Item: typeof SmtItem<Item.SubType>;
   }
 
   interface DataModelConfig {
     Item: {
       skill: typeof SkillData;
+      inventoryItem: typeof InventoryItemData;
     };
   }
 }
 
-// type TestConfiguration = Document.ImplementationClassFor<"Actor">;
+// type TestConfiguration = foundry.abstract.Document.ImplementationClassFor<"Item">;
